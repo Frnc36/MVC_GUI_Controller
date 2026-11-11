@@ -12,17 +12,23 @@ public class Controller {
 
     public Controller(NewJFrame view) {
         this.view = view;
-        
+
         //view vezerlők elérése
-        JLabel lbl = view.getLbl();
         JButton btn = view.getBtn();
-        
-        //vezérlők eseményeinek összekötése
+
+        //2.
+        //JLabel lbl = view.getLbl();
+        //vivew vezérlők eseményeinek összekötése
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //1.
                 //System.out.println("Klikkeltél!");
-                lbl.setText("Klikkeltél!");
+
+                //2. csak egy olyan view.val tud dolgozni amiben van label/JLabel lbl = view.getLbl(); itt lenne minden kattintásnál lefogjuk kérdezni/végrehajtódik
+                //lbl.setText("Klikkeltél!");
+                //view.megjelenit("Klikkeltél!\r\n"); //ez windows-ra van
+                view.megjelenit("Klikkeltél!"+System.lineSeparator());
             }
         });
     }
